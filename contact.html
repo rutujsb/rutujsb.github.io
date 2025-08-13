@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact • MyPortfolio</title>
+    <style>
+      /* Reset & Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        line-height: 1.6;
+        background-color: #f4f7fb;
+        color: #333;
+      }
+
+      /* Header */
+      header {
+        background: linear-gradient(90deg, #6a11cb, #2575fc);
+        color: white;
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .container {
+        width: 90%;
+        margin: auto;
+      }
+
+      .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 12px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #ffd057;
+      }
+
+      nav a.active {
+        color: #ffd057;
+        font-weight: bold;
+      }
+
+      #theme-toggle {
+        background: transparent;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        color: white;
+      }
+
+      /* Main Section */
+      .section {
+        padding: 40px 20px;
+      }
+
+      h2 {
+        margin-bottom: 15px;
+        color: #222;
+      }
+
+      p {
+        margin-bottom: 15px;
+      }
+
+      /* Contact Form */
+      .contact-form {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        max-width: 500px;
+        margin: auto;
+      }
+
+      .contact-form label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        margin-top: 15px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+      }
+
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        outline: none;
+        border-color: #2575fc;
+        box-shadow: 0 0 5px rgba(37, 117, 252, 0.4);
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 15px;
+        background: #2575fc;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .btn:hover {
+        background: #1b5fcd;
+      }
+
+      .muted {
+        font-size: 0.9rem;
+        color: #555;
+        margin-top: 10px;
+      }
+
+      /* Footer */
+      footer {
+        background: #222;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        margin-top: 20px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .header-inner {
+          flex-direction: column;
+        }
+
+        nav {
+          margin-top: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container header-inner">
+        <h1 class="logo">MyPortfolio</h1>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html" class="active">Contact</a>
+        </nav>
+        <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </div>
+    </header>
+
+    <main class="container section">
+      <h2>Contact Me</h2>
+      <p>Want to work together or ask something? Reach out:</p>
+
+      <form
+        id="contactForm"
+        class="contact-form"
+        onsubmit="return handleContact(event)"
+      >
+        <label>
+          Name
+          <input type="text" id="name" required />
+        </label>
+
+        <label>
+          Email
+          <input type="email" id="email" required />
+        </label>
+
+        <label>
+          Message
+          <textarea id="message" rows="5" required></textarea>
+        </label>
+
+        <button type="submit" class="btn">Send Message</button>
+        <p id="contactMsg" class="muted"></p>
+      </form>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© <span id="year4"></span> MyPortfolio</p>
+      </div>
+    </footer>
+
+    <script>
+      // Set current year in footer
+      document.getElementById("year4").textContent = new Date().getFullYear();
+
+      // Handle contact form
+      function handleContact(event) {
+        event.preventDefault();
+        document.getElementById("contactMsg").textContent =
+          "Thanks for your message! I’ll get back to you soon.";
+        document.getElementById("contactForm").reset();
+        return false;
+      }
+    </script>
+  </body>
+</html>

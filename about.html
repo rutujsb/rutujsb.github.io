@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>About • MyPortfolio</title>
+    <style>
+      /* Reset & Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        line-height: 1.6;
+        background-color: #f4f7fb;
+        color: #333;
+      }
+
+      /* Header */
+      header {
+        background: linear-gradient(90deg, #6a11cb, #2575fc);
+        color: white;
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .container {
+        width: 90%;
+        margin: auto;
+      }
+
+      .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 12px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #ffd057;
+      }
+
+      nav a.active {
+        color: #ffd057;
+        font-weight: bold;
+      }
+
+      #theme-toggle {
+        background: transparent;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        color: white;
+      }
+
+      /* Main Section */
+      .section {
+        padding: 40px 20px;
+      }
+
+      h2 {
+        margin-bottom: 15px;
+        color: #222;
+      }
+
+      h3 {
+        margin-top: 25px;
+        margin-bottom: 10px;
+        color: #444;
+      }
+
+      p {
+        margin-bottom: 15px;
+      }
+
+      ul.skills {
+        list-style: none;
+        padding: 0;
+      }
+
+      ul.skills li {
+        background: white;
+        margin: 8px 0;
+        padding: 10px;
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      /* Footer */
+      footer {
+        background: #222;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        margin-top: 20px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .header-inner {
+          flex-direction: column;
+        }
+
+        nav {
+          margin-top: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container header-inner">
+        <h1 class="logo">MyPortfolio</h1>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html" class="active">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </div>
+    </header>
+
+    <main class="container section">
+      <h2>About Me</h2>
+      <p>
+        I am a Java Full Stack developer with hands-on experience building
+        backend systems using Spring Boot and creating clean frontends. I enjoy
+        learning new tech and solving real problems.
+      </p>
+
+      <h3>Skills</h3>
+      <ul class="skills">
+        <li>Java • Spring Boot • Hibernate</li>
+        <li>REST APIs • MySQL / PostgreSQL</li>
+        <li>HTML • CSS • JavaScript • React</li>
+        <li>Git • Github • Postman• Spring Initializer •</li>
+      </ul>
+
+      <h3>Experience & Projects</h3>
+      <p>
+        Worked on personal projects like Online Quiz, Rest API's, Dairy
+        Management System, and more.
+      </p>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© <span id="year2"></span> MyPortfolio</p>
+      </div>
+    </footer>
+
+    <script>
+      // Set current year in footer
+      document.getElementById("year2").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

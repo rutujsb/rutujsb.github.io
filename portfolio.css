@@ -1,0 +1,146 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
+  background-color: #f4f7fb;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #ffd057;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(120deg, #6a11cb, #2575fc);
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.hero h2 {
+  font-size: 2.2rem;
+}
+
+.highlight {
+  color: #ffd057;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: #ffd057;
+  color: #333;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #e6b800;
+}
+
+/* About Section */
+.about,
+.projects,
+.contact {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.about h2,
+.projects h2,
+.contact h2 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+/* Projects Section */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Contact Section */
+.contact a {
+  color: #2575fc;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header nav {
+    margin-top: 10px;
+  }
+}

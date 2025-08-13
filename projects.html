@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Projects • MyPortfolio</title>
+    <style>
+      /* Reset & Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        line-height: 1.6;
+        background-color: #f4f7fb;
+        color: #333;
+      }
+
+      /* Header */
+      header {
+        background: linear-gradient(90deg, #6a11cb, #2575fc);
+        color: white;
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .container {
+        width: 90%;
+        margin: auto;
+      }
+
+      .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 12px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #ffd057;
+      }
+
+      nav a.active {
+        color: #ffd057;
+        font-weight: bold;
+      }
+
+      #theme-toggle {
+        background: transparent;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        color: white;
+      }
+
+      /* Main Section */
+      .section {
+        padding: 40px 20px;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        color: #222;
+      }
+
+      /* Project Grid */
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .project-card {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-card h4 {
+        margin-bottom: 10px;
+        color: #2575fc;
+      }
+
+      .project-card p {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+        color: #555;
+      }
+
+      .small-btn {
+        display: inline-block;
+        background: #2575fc;
+        color: white;
+        padding: 8px 14px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: background 0.3s ease;
+      }
+
+      .small-btn:hover {
+        background: #1b5fcd;
+      }
+
+      /* Footer */
+      footer {
+        background: #222;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        margin-top: 20px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .header-inner {
+          flex-direction: column;
+        }
+
+        nav {
+          margin-top: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container header-inner">
+        <h1 class="logo">MyPortfolio</h1>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html" class="active">Projects</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </div>
+    </header>
+
+    <main class="container section">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <h4>Calculator App</h4>
+          <p>Vanilla JS calculator with history and responsive layout.</p>
+          <a href="#" class="small-btn">View Repo</a>
+        </article>
+
+        <article class="project-card">
+          <h4>Book API</h4>
+          <p>
+            Node.js & Express REST API for books (memory-based). Can be upgraded
+            to use a DB.
+          </p>
+          <a href="#" class="small-btn">View Repo</a>
+        </article>
+
+        <article class="project-card">
+          <h4>Sorting Visualizer</h4>
+          <p>
+            Frontend visualiser demonstrating sorting algorithms with
+            animations.
+          </p>
+          <a href="#" class="small-btn">View Repo</a>
+        </article>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© <span id="year3"></span> MyPortfolio</p>
+      </div>
+    </footer>
+
+    <script>
+      // Set current year in footer
+      document.getElementById("year3").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
